@@ -6,10 +6,10 @@ import Community from "./Community";
 const Header = () => {
 	const [active, setActive] = useState(null);
 	return (
-		<div className="fixed top-0 right-0 h-full flex ">
+		<div className="fixed top-0 right-0 h-full w-11/12 flex justify-end ">
 			{/* Food Section */}
 			<div
-				className={`bg-blue-500 h-full w-14 flex relative justify-center  items-center ${
+				className={`bg-blue-500 h-full w-14 flex relative justify-center  items-center cursor-pointer ${
 					active === "food" && "hidden"
 				}`}
 				onClick={() => setActive("food")}
@@ -22,7 +22,7 @@ const Header = () => {
 			{active === "food" && <Food />}
 			{/* Retail Section */}
 			<div
-				className={`bg-red-500 h-full w-14 flex relative justify-center items-center ${
+				className={`bg-red-500 h-full w-14 flex relative justify-center items-center cursor-pointer ${
 					active === "retail" && "hidden"
 				}`}
 				onClick={() => setActive("retail")}
@@ -35,7 +35,7 @@ const Header = () => {
 			{active === "retail" && <Retail />}
 			{/* Community Section */}
 			<div
-				className={`bg-yellow-500 h-full w-14 flex relative justify-center items-center ${
+				className={`bg-yellow-500 h-full w-14 flex relative justify-center items-center cursor-pointer ${
 					active === "community" && "hidden"
 				}`}
 				onClick={() => setActive("community")}
