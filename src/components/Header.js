@@ -2,16 +2,26 @@ import React, { useState } from "react";
 import Food from "./Food";
 import Retail from "./Retail";
 import Community from "./Community";
+import Home from "./Home";
+import headerlogo from "../assets/images/home-logo.svg";
 
 const Header = () => {
-	const [active, setActive] = useState(null);
+	const [active, setActive] = useState("home");
 	return (
-		<div className="fixed top-0 right-0 h-full w-11/12 flex justify-end ">
+		<div className="md:fixed md:top-0 md:right-0 md:h-full md:w-full md:flex md:justify-end hidden">
+			{/* Home Section */}
+			<div
+				className={`bg-white-500 h-full w-16 flex relative justify-center  items-center cursor-pointer ${active === "home" && "hidden"
+					}`}
+				onClick={() => setActive("home")}
+			>
+				<img src={headerlogo} alt="headerlogo" className="absolute top-20" />
+			</div>
+			{active === "home" && <Home />}
 			{/* Food Section */}
 			<div
-				className={`bg-blue-500 h-full w-14 flex relative justify-center  items-center cursor-pointer ${
-					active === "food" && "hidden"
-				}`}
+				className={`bg-blue-500 h-full w-16 flex relative justify-center  items-center cursor-pointer ${active === "food" && "hidden"
+					}`}
 				onClick={() => setActive("food")}
 			>
 				<p className="absolute top-20 font-semibold">餐饮</p>
@@ -22,9 +32,8 @@ const Header = () => {
 			{active === "food" && <Food />}
 			{/* Retail Section */}
 			<div
-				className={`bg-red-500 h-full w-14 flex relative justify-center items-center cursor-pointer ${
-					active === "retail" && "hidden"
-				}`}
+				className={`bg-red-500 h-full w-16 flex relative justify-center items-center cursor-pointer ${active === "retail" && "hidden"
+					}`}
 				onClick={() => setActive("retail")}
 			>
 				<p className="absolute top-20 font-semibold">購物</p>
@@ -35,9 +44,8 @@ const Header = () => {
 			{active === "retail" && <Retail />}
 			{/* Community Section */}
 			<div
-				className={`bg-yellow-500 h-full w-14 flex relative justify-center items-center cursor-pointer ${
-					active === "community" && "hidden"
-				}`}
+				className={`bg-yellow-500 h-full w-16 flex relative justify-center items-center cursor-pointer ${active === "community" && "hidden"
+					}`}
 				onClick={() => setActive("community")}
 			>
 				<p className="absolute top-20 font-semibold">文化</p>

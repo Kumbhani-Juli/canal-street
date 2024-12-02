@@ -3,7 +3,7 @@ import retail from "../assets/images/retail.avif";
 import leftemoji from "../assets/images/retail_left_flower.svg";
 import rightemoji from "../assets/images/retail_right_flower.svg";
 import Footer from "./Footer";
-const Food = () => {
+const Retail = () => {
 	const foodData = [
 		{
 			title: "Design Objects",
@@ -68,45 +68,50 @@ const Food = () => {
 	];
 	return (
 		<>
-			<div className="bg-red-500 w-full food-container pt-80 px-20 overflow-auto ">
-				<div className="flex flex-wrap justify-between">
-					<div className="w-7/12">
+			<div className="bg-red-500 w-full food-container md:pt-80 md:px-20 md:overflow-auto pt-24 px-6">
+				<div className="md:flex md:flex-wrap md:justify-between">
+					<p className="text-right font-mono	font-medium md:hidden">
+						Retail Market Hours:
+						<br />
+						Thurs – Sun: 11:00AM - 7:00PM
+					</p>
+					<div className="md:w-7/12">
 						{" "}
-						<h1 className=" font-serif text-9xl food-title">
+						<h1 className="font-serif md:text-9xl food-title md:m-0 mt-4">
 							The Retail Market
 						</h1>
 					</div>
-					<div className="relative text-right ">
-						<img src={retail} className="max-w-96 " />
-						<span className="absolute top-[-40px] right-[-60px] z-10 text-6xl">
+					<div className="md:relative md:text-right ">
+						<img src={retail} className="md:max-w-96 " />
+						<span className="absolute md:top-[-40px] md:right-[-60px] -bottom-10 right-10 font-bold z-10 text-6xl">
 							餐饮
 						</span>
-						<p className="absolute top-[-150px] right-[-30px] text-right font-mono	font-medium">
+						<p className="md:absolute md:top-[-150px] md:right-[-30px] md:text-right font-mono md:block hidden font-medium">
 							Retail Market Hours:
 							<br />
 							Thurs – Sun: 11:00AM - 7:00PM
 						</p>
 					</div>
 				</div>
-				<div className="grid grid-cols-3 gap-10 mt-20 gap-y-24">
+				<div className="md:grid md:grid-cols-3 md:gap-10 md:mt-20 md:gap-y-24 mt-10">
 					{foodData?.map((item, index) => (
-						<div key={index}>
-							<p className="font-serif text-xl mb-6">{item?.title}</p>
+						<div key={index} className="md:m-0 mb-5">
+							<p className="font-serif md:text-xl md:mb-6">{item?.title}</p>
 							<h2 className="font-serif text-3xl font-mono">{item?.content}</h2>
 						</div>
 					))}
 				</div>
-				<div className="flex justify-between single-announcement mt-20">
-					<div className="">
-						<img src={leftemoji} className="h-52 leftemoji" />
+				<div className="md:flex md:justify-between text-center single-announcement md:mt-20">
+					<div className="md:mb-0 mb-10">
+						<img src={leftemoji} className="md:h-52 leftemoji" />
 					</div>
-					<div className="w-96 text-center ">
-						<h1 className="text-8xl mb-10 ">The Best of NYC</h1>
-						<p className="font-mono text-2xl">All under one roof!</p>
+					<div className="md:w-96 md:text-center ">
+						<h1 className="md:text-8xl text-5xl font-mono md:mb-10 ">The Best of NYC</h1>
+						<p className="font-mono md:text-2xl">All under one roof!</p>
 					</div>
-					<div className="">
+					<div className="md:mt-0 mt-10">
 						{" "}
-						<img src={rightemoji} className=" h-52 rightemoji" />
+						<img src={rightemoji} className="md:h-52 rightemoji" />
 					</div>
 				</div>
 				<Footer />
@@ -115,4 +120,4 @@ const Food = () => {
 	);
 };
 
-export default Food;
+export default Retail;
